@@ -1,0 +1,27 @@
+<h1>Friend List</h1>
+<table>
+  <thead>
+    <tr>
+    <td>姓名</td>
+    <td></td>
+    <td>信箱</td>
+    <td></td>
+    <td>電話</td>
+    <td></td>
+    <td>推特</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @friends.each do |friend| %>
+    <tr>
+      <td><%= friend.name %></td>
+      <td></td>
+      <td><%= friend.email %></td>
+      <td></td>
+      <td><%= friend.tel %></td>
+      <td></td>
+      <td><%= friend.twitter %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
