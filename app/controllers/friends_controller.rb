@@ -3,6 +3,10 @@ class FriendsController < ApplicationController
     @friends = Friend.all
   end
 
+  def show
+    @friend = Friend.find_by(id: params[:id])
+  end
+
   def new
     @friend = Friend.new
   end
