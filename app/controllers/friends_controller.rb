@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
   end
 
   def create
-    @friend = Friend.new(params[:friend])
+    @friend = Friend.new(friend_params)
     # 成功
     if @friend.save
       redirect_to friends_path, notice: "新增朋友成功!"
@@ -16,8 +16,12 @@ class FriendsController < ApplicationController
     else 
       render :new
     end  
-
   end
+
+    private
+      def friend_params
+        params.require(:friend).permit(:name, :email, :tel, :twitter)
+      end
 
   
 end
