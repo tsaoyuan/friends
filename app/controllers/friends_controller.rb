@@ -18,6 +18,10 @@ class FriendsController < ApplicationController
     end  
   end
 
+  def edit
+    @friend = Friend.find_by(id: params[:id])
+  end
+
   private
     def friend_params
       params.require(:friend).permit(:name, :email, :tel, :twitter)

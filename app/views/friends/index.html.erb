@@ -20,6 +20,9 @@
       <td><%= friend.tel %></td>
       <td></td>
       <td><%= friend.twitter %></td>
+      <td>
+        <%= link_to "編輯", edit_friend_path(friend) %>
+      </td>
     </tr>
     <% end %>
   </tbody>
