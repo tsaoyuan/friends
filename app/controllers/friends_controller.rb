@@ -18,10 +18,10 @@ class FriendsController < ApplicationController
     end  
   end
 
-    private
-      def friend_params
-        params.require(:friend).permit(:name, :email, :tel, :twitter)
-      end
+  private
+    def friend_params
+      params.require(:friend).permit(:name, :email, :tel, :twitter)
+    end
 
   
 end
