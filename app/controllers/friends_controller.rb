@@ -3,6 +3,10 @@ class FriendsController < ApplicationController
     @friends = Friend.all
   end
 
+  def show
+    @friend = Friend.find_by(id: params[:id])
+  end
+
   def new
     @friend = Friend.new
   end
@@ -16,6 +20,22 @@ class FriendsController < ApplicationController
     else 
       render :new
     end  
+  end
+
+  def edit
+    @friend = Friend.find_by(id: params[:id])
+  end
+  
+  def update
+    @friend = Friend.find_by(id: params[:id])
+
+    if @friend.update(friend_params)
+      redirect_to friends_path, notice: "編輯成功!"
+    # 失敗
+    else 
+      render :edit
+    end  
+
   end
 
   private
