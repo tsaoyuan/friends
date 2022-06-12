@@ -24,7 +24,7 @@
         <%= link_to "編輯", edit_friend_path(friend.id) %>
       </td> 
       <td>
-        <%= link_to "刪除", friend_path(friend.id), method: "delete" %>
+        <%= link_to "刪除", friend_path(friend.id), method: "delete",  data: { confirm: "Are you sure?"} %>
       </td>
     </tr>
     <% end %>
