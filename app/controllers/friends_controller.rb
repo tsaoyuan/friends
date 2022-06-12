@@ -38,6 +38,12 @@ class FriendsController < ApplicationController
 
   end
 
+  def destroy
+    @friend = Friend.find_by(id: params[:id])
+    @friend.destroy if @friend
+    redirect_to friends_path, notice: "刪除朋友成功!"
+  end
+
   private
     def friend_params
       params.require(:friend).permit(:name, :email, :tel, :twitter)
